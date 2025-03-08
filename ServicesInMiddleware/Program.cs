@@ -9,13 +9,13 @@ builder.Services.AddControllersWithViews();
 //builder.Services.AddCounterService();
 
 // Scoped: для каждого запроса создается один объект сервиса.
-//builder.Services.AddScoped<ICounter, RandomCounter>();
-//builder.Services.AddScoped<CounterService>();
+builder.Services.AddScoped<ICounter, RandomCounter>();
+builder.Services.AddScoped<CounterService>();
 
 // Singleton: объект сервиса создается при первом обращении к нему, 
 // все последующие запросы используют один и тот же ранее созданный объект сервиса
-builder.Services.AddSingleton<ICounter, RandomCounter>();
-builder.Services.AddSingleton<CounterService>();
+//builder.Services.AddSingleton<ICounter, RandomCounter>();
+//builder.Services.AddSingleton<CounterService>();
 
 var app = builder.Build();
 
